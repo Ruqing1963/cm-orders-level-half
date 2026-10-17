@@ -82,7 +82,9 @@ print(c, log(3) - log(6)/2 - c/2)
 
 ## Citation
 
-See `CITATION.cff`. Archived at Zenodo, DOI 10.5281/zenodo.23428952.
+See `CITATION.cff`. The manuscript is archived at Zenodo (preprint, version v1, published 17 October 2026):
+DOI [10.5281/zenodo.23428952](https://doi.org/10.5281/zenodo.23428952), record page
+<https://zenodo.org/records/23428952>. The code and data of this repository correspond to tag `v1.0`.
 
 ## License
 
