@@ -40,7 +40,8 @@ def best(alpha, w, n=70):
     return out
 
 
-WEIGHTS = {1: "w = 1:  |E(F_p)|/8,  |E(F_{p²})|/(4|E(F_p)|)", 2: "w = 2:  ℓ = 3", 4: "w = 4:  ℓ = 5"}
+WEIGHTS = {1: r"$w=1$:  $|E(\mathbb{F}_p)|/8$,  $|E(\mathbb{F}_{p^2})|/(4|E(\mathbb{F}_p)|)$",
+           2: r"$w=2$:  $\ell=3$", 4: r"$w=4$:  $\ell=5$"}
 CSV = os.path.join(ROOT, "data", "level_vs_bound.csv")
 
 
