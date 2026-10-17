@@ -50,6 +50,7 @@ python certify_G.py                      # Section 3.5: G(1/8, 9/20, 10/17) = 0.
 python certify_G.py 0.499 1/8 20/41 6/5  # any parameters with alpha/4 <= theta < delta < alpha
 python check_omega_distribution.py 1e8   # Section 3.3 bookkeeping: identity (3), densities g(d), discrepancies (~3 min)
 python scan_levels.py                    # exploration: bound against level, writes data/ and figures/ (~10 min)
+python scan_levels.py --plot-only        # redraw figures/level_vs_bound.pdf from data/level_vs_bound.csv
 ```
 
 `certify_G.py` evaluates the closed form
