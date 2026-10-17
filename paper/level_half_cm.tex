@@ -1,6 +1,7 @@
 \documentclass[11pt]{amsart}
 \usepackage{amsmath,amssymb,amsthm}
 \usepackage[margin=1.15in]{geometry}
+\usepackage{graphicx}
 \usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
 
 \newtheorem{theorem}{Theorem}[section]
@@ -57,7 +58,7 @@ In a recent paper on almost prime orders over prime power fields, Xie \cite[Rema
 
 The purpose of this note is to show that \eqref{eq:level} is true at level $x^{1/2}(\log x)^{-B}$ for both sequences, so that the argument of \cite{IJU} is complete. The idea is simple. Write a square-free ideal $\fa$ as $\fa=(c)\fg$ with $c\in\Z_{>0}$ as large as possible (the \emph{rational part} of $\fa$) and $\fg$ primitive. Then $d=c\,\N(\fg)$ and $\N(\fa)=c\,d$. The ideals of large norm are exactly those with a large rational part, and these are rare: the expected number of elements of the sequence in a residue class modulo $\fa$ is of size $x/\N(\fa)=x/(cd)$, which is summable over $c$. For $c\le(\log x)^{B_0}$ we have $\N(\fa)\le (\log x)^{B_0} d$, which is within reach of the Bombieri--Vinogradov theorem; for $c>(\log x)^{B_0}$ the contribution is bounded trivially by counting lattice points in a disc. This is in fact the mechanism already used in \cite[p.~823]{IJU} to discard the inert primes, which contribute $q^2$ to the norm; the split primes with $\fa_p=(p)$ have to be treated in the same way.
 
-We state the result in a form that applies to any sequence for which a Bombieri--Vinogradov theorem over ideals is available (Theorem~\ref{thm:main}), and then apply it to the two sequences of \cite{IJU} (Section~\ref{sec:appl}). The same statement holds over any imaginary quadratic field of class number one (Remark~\ref{rem:classnumber}), which is the setting of the extension of \cite{IJU} to all CM curves over $\Q$ in \cite{JU}. As a by-product, the level $x^{1/2-\e}$ in Lemma~3.3 of \cite{Xie} improves the almost-prime bounds of \cite[Theorem~1.3]{Xie} for $|E(\F_{p^\ell})|/|E(\F_p)|$ (Corollary~\ref{cor:Xie}). Section~\ref{sec:rest} records a few remarks on the remaining parts of \cite{IJU}, in particular on the hypothesis of their Lemma~5.2.
+We state the result in a form that applies to any sequence for which a Bombieri--Vinogradov theorem over ideals is available (Theorem~\ref{thm:main}), and then apply it to the two sequences of \cite{IJU} (Section~\ref{sec:appl}). The same statement holds over any imaginary quadratic field of class number one (Remark~\ref{rem:classnumber}), which is the setting of the extension of \cite{IJU} to all CM curves over $\Q$ in \cite{JU}. As a by-product, the level $x^{1/2-\e}$ in Lemma~3.3 of \cite{Xie} improves the almost-prime bounds of \cite[Theorem~1.3]{Xie} for $|E(\F_{p^\ell})|/|E(\F_p)|$ (Corollary~\ref{cor:Xie}). Section~\ref{sec:rest} records a few remarks on the remaining parts of \cite{IJU}, in particular on the hypothesis of their Lemma~5.2. The code and data behind the numerical statements are described at the end of the paper (GitHub and Zenodo, doi:10.5281/zenodo.23428952).
 
 \subsection*{Acknowledgement} I thank Likun Xie for her comments on a first version of the argument.
 
@@ -272,7 +273,14 @@ and for every odd prime $\ell\ge3$,
 \]
 \end{corollary}
 
-This improves $P_5$ and $\lfloor 4.1(\ell-1)+1.2\rfloor$ in \cite[Theorem~1.3]{Xie}; for $\ell=3,5,7$ the bounds are $5,9,13$ in place of $9,17,25$. (For $|E(\F_p)|/8$ itself the same computation gives $P_3$, which is superseded by \eqref{eq:IJU}.) The vector-sieve results \cite[Theorems~1.4, 1.5]{Xie} also depend on the level through \cite[Proposition~2.8]{Xie}; we have not recomputed them.
+This improves $P_5$ and $\lfloor 4.1(\ell-1)+1.2\rfloor$ in \cite[Theorem~1.3]{Xie}; for $\ell=3,5,7$ the bounds are $5,9,13$ in place of $9,17,25$. (For $|E(\F_p)|/8$ itself the same computation gives $P_3$, which is superseded by \eqref{eq:IJU}.) Figure~\ref{fig:level} shows how the quantity $\min(1/\lambda+w/\delta)$, minimised over $\theta,\delta$ with $\lambda$ chosen so that $G=0$, decreases with the level $\alpha$; the gain from $\alpha=1/4$ to $\alpha=1/2$ is a factor close to $2$ for large $\ell$, as the term $(\ell-1)/\delta$ with $\delta\to\alpha$ dominates. The vector-sieve results \cite[Theorems~1.4, 1.5]{Xie} also depend on the level through \cite[Proposition~2.8]{Xie}; we have not recomputed them.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.82\textwidth]{level_vs_bound.pdf}
+\caption{The almost-prime bound $\min_{\theta,\delta}(1/\lambda+w/\delta)$ of the weighted linear sieve \cite[(4.7)--(4.9)]{Xie} as a function of the level of distribution $\alpha$, with $\lambda$ chosen so that $G(\theta,\delta,\lambda)=0$ and $F$, $f$ continued beyond their closed-form ranges by the delay-differential equations $(sF(s))'=f(s-1)$, $(sf(s))'=F(s-1)$. The weight $w$ is $1$ for $|E(\F_p)|/8$ and $|E(\F_{p^2})|/(4|E(\F_p)|)$, and $\ell-1$ for $|E(\F_{p^\ell})|/|E(\F_p)|$. The bound on $\Omega$ is the integer part. Floating-point exploration (\texttt{scan\_levels.py} in the repository described at the end of the paper); the values used in Corollary~\ref{cor:Xie} are certified separately.}
+\label{fig:level}
+\end{figure}
 
 \section{Remarks on the remaining parts of the proof in \cite{IJU}}\label{sec:rest}
 
@@ -295,6 +303,14 @@ where $E(\chi)=1$ if $\chi$ is principal and $0$ otherwise, and $c>0$ and the im
 
 \subsection{Minor points}
 In the derivation of \cite[(5.9)]{IJU} the condition $(\omega,\fa)=1$ is removed from the main term; this costs $\Phi(\fa)^{-1}\#\{\omega:(\omega,\fa)\ne1\}$ per modulus, which is why the weight $\Phi(\fa)^{-1}$ must be kept in the sum over $\fa$ (as above); without it the sum would be of size $xQ/z$. The elements of $\mathcal B(x)$ are odd (not ``divisible by $2$'' as stated on \cite[p.~830]{IJU}), which is what is used: the sieve for $W_3$ runs over odd primes $p<\sqrt x$, and $\prod_{2<p<\sqrt x}(1-g(p))=(1-g(2))^{-1}\cdot\frac{\log z}{\log\sqrt x}\,V(z)(1+o(1))=\frac12V(z)(1+o(1))$ by \cite[(3.10)]{IJU} and $g(2)=\frac12$. The constants $\frac12e^{\gamma}\log 6$ in \cite[(4.3)]{IJU} (the sum over $p_0$ runs over split primes only, which have density $\frac12$ among all primes, with $g(p_0)\sim 2/p_0$) and $c<0.36308373$ in \cite[(5.10)]{IJU} were recomputed. The Chen-type weight \cite[(2.2)]{IJU} is the classical one: an element $a$ of $\mathcal A(x)$ coprime to $2P(z)Q(z)$ with positive weight is either $P_2$ or not square-free, because $a\le x/8$ has at most one prime factor $\le y$ unless two such factors give weight $\le 0$, and a square-free $a$ with exactly one prime factor $\le y$ and at least three prime factors is of the form $p_1p_2p_3$ counted by $W_3$ (four factors would exceed $x^{1/8}\cdot x=x^{9/8}$); the non-square-free elements are $\ll x\log x/(z\log z)$ in number.
+
+\section*{Data and code availability}
+The scripts behind the numerical statements of this note are available at
+\begin{center}
+\url{https://github.com/Ruqing1963/cm-orders-level-half}
+\end{center}
+and archived at Zenodo, \href{https://doi.org/10.5281/zenodo.23428952}{doi:10.5281/zenodo.23428952}. They comprise
+the interval-arithmetic evaluation of $G$ in Section~\ref{sec:appl} (\texttt{certify\_G.py}, exact rational parameters, closed form), the computation of the constants of Section~3.4, the exploration of Figure~\ref{fig:level} (\texttt{scan\_levels.py}, with the resulting table), and a first-principles check of the bookkeeping of Section~\ref{sec:appl}. The latter script, \texttt{check\_omega\_distribution.py}, builds for $x=10^8$ the set $\Om(x)$ and the primary primes of norm $\le x$, verifies the identity \eqref{eq:ie} exactly for $p=5,13,17,29,37,41$, compares the divisor densities with $g(d)$, and measures the discrepancies $E(x;\alpha,\fa)$, which are of the size of the square root of the main term for all moduli tested.
 
 \begin{thebibliography}{99}
 
