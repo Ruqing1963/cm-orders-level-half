@@ -1,0 +1,48 @@
+﻿x = 1.000e+08: Pi(x) = #primary primes = 5761008  (x/log x = 5428681)
+|Omega(x)| = 81440, distinct = 81440 (injectivity (0.1): OK)
+|Omega|/Pi(x) = 0.0141   (asymptotic upper bound c/2 = 0.1815; slow convergence expected)
+
+Identity (7.1), split p: #{p | N(1+w)} vs #{pi|1+w} + #{pibar|1+w} - #{p|1+w}   [and same for pi-1 in A]
+  p=  5: B: 35696 = 20360 + 20360 - 5024 -> 35696  OK   | A: 2520560 = 1440217 + 1440217 - 359874 -> 2520560  OK
+  p= 13: B: 9298 = 4767 + 4767 - 236 -> 9298  OK   | A: 920332 = 480146 + 480146 - 39960 -> 920332  OK
+  p= 17: B: 8252 = 4225 + 4225 - 198 -> 8252  OK   | A: 697390 = 359892 + 359892 - 22394 -> 697390  OK
+  p= 29: B: 5584 = 2833 + 2833 - 82 -> 5584  OK   | A: 404318 = 205837 + 205837 - 7356 -> 404318  OK
+  p= 37: B: 4380 = 2232 + 2232 - 84 -> 4380  OK   | A: 315502 = 159986 + 159986 - 4470 -> 315502  OK
+  p= 41: B: 4026 = 2040 + 2040 - 54 -> 4026  OK   | A: 284146 = 143844 + 143844 - 3542 -> 284146  OK
+
+Densities: B_d/|Omega| and A_d/Pi(x) against g(d)   (d odd square-free)
+     d      factors       g(d)   B_d/|Om|   ratio     A_d/Pi   ratio
+     3          [3]   0.125000   0.125147  1.0012   0.124988  0.9999
+     5          [5]   0.437500   0.438310  1.0019   0.437521  1.0000
+     7          [7]   0.020833   0.020972  1.0067   0.020819  0.9993
+    11         [11]   0.008333   0.008325  0.9990   0.008301  0.9961
+    13         [13]   0.159722   0.114170  0.7148   0.159752  1.0002
+    15       [3, 5]   0.054688   0.055059  1.0068   0.054652  0.9993
+    21       [3, 7]   0.002604   0.002554  0.9807   0.002618  1.0054
+    35       [5, 7]   0.009115   0.009062  0.9942   0.009115  1.0001
+    39      [3, 13]   0.019965   0.014293  0.7159   0.019941  0.9988
+    65      [5, 13]   0.069878   0.050074  0.7166   0.069894  1.0002
+   105    [3, 5, 7]   0.001139   0.001056  0.9269   0.001145  1.0052
+   195   [3, 5, 13]   0.008735   0.006434  0.7366   0.008750  1.0018
+   221     [13, 17]   0.019341   0.011370  0.5879   0.019328  0.9993
+  1105  [5, 13, 17]   0.008462   0.005305  0.6269   0.008402  0.9929
+
+Split p: B_p against the prediction WITH the coprimality correction,  2 #{(w,pi)=1}/(p-1) - #{(w,p)=1}/(p-1)^2   [z <= p < y means p can be N(pi3)]
+  z = 10.0, y = 464.2
+  p=  5: B_p =  35696   corrected prediction =   35630.0 (ratio 1.0019)   naive |Om| g(p) =   35630.0 (ratio 1.0019)   #{pi|w} = 0
+  p= 13: B_p =   9298   corrected prediction =    9282.4 (ratio 1.0017)   naive |Om| g(p) =   13007.8 (ratio 0.7148)   #{pi|w} = 24384
+  p= 17: B_p =   8252   corrected prediction =    8301.9 (ratio 0.9940)   naive |Om| g(p) =    9861.9 (ratio 0.8368)   #{pi|w} = 13312
+  p= 29: B_p =   5584   corrected prediction =    5554.6 (ratio 1.0053)   naive |Om| g(p) =    5713.3 (ratio 0.9774)   #{pi|w} = 2304
+  p= 37: B_p =   4380   corrected prediction =    4432.2 (ratio 0.9882)   naive |Om| g(p) =    4461.6 (ratio 0.9817)   #{pi|w} = 544
+  p= 41: B_p =   4026   corrected prediction =    4012.5 (ratio 1.0034)   naive |Om| g(p) =    4021.1 (ratio 1.0012)   #{pi|w} = 176
+  p= 53: B_p =   3142   corrected prediction =    3102.2 (ratio 1.0128)   naive |Om| g(p) =    3102.2 (ratio 1.0128)   #{pi|w} = 0
+
+E(x; alpha, a) for Omega(x): max over classes alpha coprime to a, versus main term #{(w,a)=1}/Phi(a)
+  a =                    (3) inert: N=   9 Phi=   8  main/class =    10180.0  max|E| =     12.0  rms =     12.0  sqrt(main) =   100.9
+  a =                    (7) inert: N=  49 Phi=  48  main/class =     1696.7  max|E| =     39.3  rms =     23.2  sqrt(main) =    41.2
+  a =                        pi_13: N=  13 Phi=  12  main/class =     4754.7  max|E| =     25.7  rms =     18.2  sqrt(main) =    69.0
+  a =                     pibar_13: N=  13 Phi=  12  main/class =     4754.7  max|E| =     25.7  rms =     18.2  sqrt(main) =    69.0
+  a =                        pi_29: N=  29 Phi=  28  main/class =     2826.3  max|E| =     54.7  rms =     25.8  sqrt(main) =    53.2
+  a =              (13) = pi pibar: N= 169 Phi= 144  main/class =      226.9  max|E| =     23.1  rms =     12.6  sqrt(main) =    15.1
+  a =                         (21): N= 441 Phi= 384  main/class =      212.1  max|E| =     30.9  rms =     13.2  sqrt(main) =    14.6
+  a =      9+2i = (2+i)(4-i), N=85: N=  85 Phi=  64  main/class =     1064.5  max|E| =     27.5  rms =     15.5  sqrt(main) =    32.6

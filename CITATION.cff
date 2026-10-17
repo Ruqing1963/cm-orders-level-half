@@ -1,0 +1,28 @@
+cff-version: 1.2.0
+message: "If you use this repository, please cite the paper and the archived dataset."
+title: "Recovering the level of distribution x^{1/2} for the orders of y^2 = x^3 - x modulo p: code, data and manuscript"
+type: software
+authors:
+  - family-names: Chen
+    given-names: Ruqing
+    affiliation: "GUT Geoservice Inc., Montreal, Canada"
+    email: ruqing@hotmail.com
+doi: 10.5281/zenodo.23428952
+date-released: 2026-10-16
+license: MIT
+repository-code: "https://github.com/Ruqing1963/cm-orders-level-half"
+keywords:
+  - elliptic curves
+  - complex multiplication
+  - sieve methods
+  - Bombieri-Vinogradov theorem
+  - Gaussian integers
+  - almost primes
+preferred-citation:
+  type: article
+  authors:
+    - family-names: Chen
+      given-names: Ruqing
+  title: "Recovering the level of distribution x^{1/2} for the orders of y^2 = x^3 - x modulo p"
+  year: 2026
+  notes: "preprint"
